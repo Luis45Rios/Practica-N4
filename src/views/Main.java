@@ -2,6 +2,7 @@ package views;
 
 import java.util.Scanner;
 import util.AutosVendidos;
+import util.Contador;
 import util.LlamadaInternacional;
 import util.LlamadaInternacional.Zona;
 import util.AguaPotable;
@@ -17,6 +18,8 @@ public class Main {
         System.out.println("2. Llamada Telefonica");
         System.out.println("3. Agua Potable:");
         System.out.println("4. Serie");
+        System.out.println("=== PREGUNTAS DE CONTROL ====");
+        System.out.println("5. Contador con la estructura MIENTRAS");
 
         System.out.print("\nElija una opcion: ");
         int opcion = scanner.nextInt();
@@ -130,6 +133,12 @@ public class Main {
                     // Mostrar el resultado final de la serie con 2 decimales
                     System.out.printf("\nEl resultado final de la serie es: %.2f\n", resultadoFinal);
                 }
+                break;
+
+            case 5:
+                System.out.println("\n------- CONTADOR -------");
+                int cont = 1;
+                System.out.print(Contador.estructuraMientras(cont));
                 break;
             default:
                 System.out.println("Ingrese la opcion correcta...");
