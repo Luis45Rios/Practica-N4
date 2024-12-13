@@ -5,21 +5,27 @@ import util.AutosVendidos;
 import util.Contador;
 import util.LlamadaInternacional;
 import util.LlamadaInternacional.Zona;
+import util.Persona;
 import util.AguaPotable;
 import util.Serial;
+import util.SumaDeDosNumeros;
 
 public class Main {
     public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("======= Practica N° 4 =======");
+        System.out.println("============ Practica N° 4 ============");
+        System.out.println("Elaborado por: Luis Ríos");
         System.out.println("\nOPCIONES:");
         System.out.println("1. Compania de Autos:");
         System.out.println("2. Llamada Telefonica");
         System.out.println("3. Agua Potable:");
         System.out.println("4. Serie");
-        System.out.println("=== PREGUNTAS DE CONTROL ====");
+        System.out.println("======== PREGUNTAS DE CONTROL ========");
         System.out.println("5. Contador con la estructura MIENTRAS");
+        System.out.println("6. Do while con Condicional");
+        System.out.println("7. Suma de dos Numeros");
+        System.out.println("8. Referencia");
 
         System.out.print("\nElija una opcion: ");
         int opcion = scanner.nextInt();
@@ -52,6 +58,7 @@ public class Main {
                         comisionTotal,
                         utilidadTotal,
                         montoTotalPagar);
+                break;
             case 2:
                 System.out.println("\n---------- LLAMADAS INTERNACIONALES ----------");
                 System.out.print("Ingrese el continenete destino(Ejemplo: America del Sur):");
@@ -85,8 +92,7 @@ public class Main {
                 float porcentajeDiscapacidad = 0; // Default sin discapacidad
                 if (esDiscapacitado) {
                     System.out.print("Ingrese el porcentaje de discapacidad (0 a 1): ");
-                    porcentajeDiscapacidad = scanner.nextFloat(); // El porcentaje es entre 0 y 1 (Ejemplo: 0.5 para
-                                                                  // 50%)
+                    porcentajeDiscapacidad = scanner.nextFloat(); // El porcentaje es entre 0 y 1 (Ejemplo: 0.5 para 50%)
                 }
 
                 // Calcular el cargo por el servicio de agua potable
@@ -139,6 +145,43 @@ public class Main {
                 System.out.println("\n------- CONTADOR -------");
                 int cont = 1;
                 System.out.print(Contador.estructuraMientras(cont));
+                break;
+
+            case 6:
+                System.out.println("\n------- CONDICIONAL -------");
+                boolean band = false;
+
+                do {
+                    System.out.println("¿Cuanto es 2 + 2?");
+                    int resp = scanner.nextInt();
+                    if (resp == 4) {
+                        band = true;
+                        System.out.println("Excelente!");
+                    } else {
+                        System.out.println("Lo siento, intenta de nuevo");
+                    }
+                } while (band == false);
+                break;
+            case 7:
+                System.out.println("------- SUMA DE DOS NUMEROS -------");
+
+                System.out.print("Ingrese el primer numero: ");
+                int a = scanner.nextInt();
+
+                System.out.print("Ingrese el segundo numero: ");
+                int b = scanner.nextInt();
+
+                System.out.println(SumaDeDosNumeros.sumarDosNumeros(a, b));
+                break;
+
+            case 8:
+                Persona persona = new Persona("Juan", 25);
+
+                System.out.println(persona.nombre + " tiene " + persona.edad + " años.");
+
+                persona.celebrarCumpleaños();
+
+                System.out.println(persona.nombre + " ahora tiene " + persona.edad + " años.");
                 break;
             default:
                 System.out.println("Ingrese la opcion correcta...");

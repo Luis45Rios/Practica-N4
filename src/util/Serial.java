@@ -1,6 +1,7 @@
 package util;
 
 public class Serial {
+    // Serial: (1 / 1)^2 + (1 / 3)^4 - (2 / 5)^6 - (3 / 7)^8 + (5 / 9)^10 + (8 / 11)^12 ...
     public static double potencia(double base, int exponente) {
         double resultado = 1;
         for (int i = 1; i <= exponente; i++) {
